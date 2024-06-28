@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root {
+            width: 30%;
+            margin: auto;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #bulb{
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #bulb>img{
+            width: 100%;
+        }
+        #button {
+            margin-top: 100%;
+            width: 30%;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div id="bulb">
+            <img id="image" src="img2.jpg" alt="bulb">
+        </div>
+        <button onclick="bulbOn()" id="button">Bulb ON</button>
+    </div>
+</body>
+
+</html>
+<script>
+    let flag = false;
+    const bulbOn = () => {
+        let container = document.querySelector("#bulb");
+        let img = document.querySelector("#image");
+        if (!flag) {
+            img.src = "img1.jpg";
+            container.append(img);
+            document.querySelector("#button").innerHTML = "Bulb OFF";
+            flag = true;
+        } else {
+            img.src = "img2.jpg";
+            container.append(img);
+            document.querySelector("#button").innerHTML = "Bulb ON";
+            flag = false;
+        }
+
+    }
+</script>
